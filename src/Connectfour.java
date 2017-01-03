@@ -13,14 +13,14 @@ import java.awt.event.MouseListener;
 public class Connectfour extends Canvas implements Runnable {
 	
 	public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
-	//public static final int WIDTH = 900, HEIGHT = WIDTH / 12 * 9;
+	
 	private boolean running = false;
 	private Menu menu;
 	private Thread thread;
 	public HUD hud;
 	Handler handler;
 	public Computer comp;
-	//private game Game;
+	
 	
 	
 	public enum STATE{
@@ -72,7 +72,7 @@ public class Connectfour extends Canvas implements Runnable {
 			
 			if(System.currentTimeMillis() -timer > 1000){
 				timer += 1000;
-				//System.out.println("FPS: " + frames);
+				//System.out.println("FPS: " + frames); checks FPS
 				frames = 0;
 			}
 		}
@@ -85,17 +85,10 @@ public class Connectfour extends Canvas implements Runnable {
 		
 	}
 	private void tick(){
-		/*if(gameState == STATE.Game){
-			hud.tick();
-		}else if(gameState == STATE.Menu){
-		menu.tick();
-		} */
+		
 		if(gameState == STATE.AI){
 			comp.tick();
-		} /*
-		else if(gameState == STATE.WIN){
-			
-		} */
+		}
 	} 
 	
 	public synchronized void stop(){
